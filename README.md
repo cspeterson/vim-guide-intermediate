@@ -235,7 +235,7 @@ a *really* great move to have under your belt for quick editing, code or otherwi
 * `a"` to select  a  double quoted string (and the quotes)
 * `a{` or `a}` to select block in curly braces (and the braces)
 * `a[` or `a]` to select  block in brackets (and the brackets)
-* `a``` to select texblock in backticks (and the backticks)
+* ``a` `` to select texblock in backticks (and the backticks)
 * `a(` or `a)` to select  block in  parens (and the parens)
 * `a<` or `a>` to select  block in `<>` (and the `<>`)
 
