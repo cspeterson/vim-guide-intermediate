@@ -233,11 +233,11 @@ a *really* great move to have under your belt for quick editing, code or otherwi
 * `ap` to select  a  paragraph (and its  whitespace)
 * `a'` to select  a  single quoted string (and the quotes)
 * `a"` to select  a  double quoted string (and the quotes)
-* `a{` or `a}` to select  a  curly braces (and the braces)
-* `a[` or `a]` to select  a  brackets (and the brackets)
-* `a``` to select  a  backticks (and the backticks)
-* `a(` or `a)` to select  a  parens block
-* `a<` or `a>` to select  a  `<>` block
+* `a{` or `a}` to select block in curly braces (and the braces)
+* `a[` or `a]` to select  block in brackets (and the brackets)
+* `a``` to select texblock in backticks (and the backticks)
+* `a(` or `a)` to select  block in  parens (and the parens)
+* `a<` or `a>` to select  block in `<>` (and the `<>`)
 
 There are more. `:help objects` has a lot more information.
 
