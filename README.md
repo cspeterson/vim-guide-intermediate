@@ -54,10 +54,31 @@ To investigate the current state of any setting, query it with a question mark, 
 ```viml
 " line numbers on
 set nu
+
 " avoid old-style odd behaviours. things like word-skip and ctrl+some key combos  are probbaly kinda broken
 set term=xterm-256color 
+
 " always highlight the line being edited
 set cursorline 
+
+" To watch for file changes from outside sources
+let autoreadargs={'autoread':1}
+execute WatchForChanges("*",autoreadargs)
+
+" Search with ignore case, smart case, highlight results, incrementally
+" smart case ignores "ignore case" if we include uppercase characters
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+
+" Disable modelines, a feature that lets text files have special vim commands in them, y u c k
+set modelines=0
+
+" make wrapped lines indent properly, but only if we're on a new enough version of vim
+if has ( "patch-7.4.354" )
+   set breakindent
+endif
 ```
 
 ## Status line
