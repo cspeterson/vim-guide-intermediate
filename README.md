@@ -228,6 +228,10 @@ your disposal to for the big jumps.
 * `u` undoes an action
 * `ctrl+r` redoes an action
 
+## Repeating an edit
+Press `.` to repeat the last edit action you made. This is very useful when combined with object selection and
+replacement commands.
+
 ## Selecting text
 
 ### Visual mode
