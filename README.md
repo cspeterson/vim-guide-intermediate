@@ -208,7 +208,14 @@ Vim plugins recommended by me in general:
 ## Modes
 
 * Normal - for navigation through the document and manipulating text. Hit `Escape` or `Ctrl+c` to get back here.
-* Insert - for typing in text. Some commands from Normal mode will also work here. Hit `i` from Normal Mode to get in.
+* Insert - for typing in text. Some commands from Normal mode will also work here. You can enter insert mode in a
+* handful of different ways: 
+   * Hit `i` from Normal Mode to begin insert mode at current cursor location
+   * Hit `a` from Normal Mode to begin insert mode after the current cursor location
+   * Hit `A` from Normal Mode to begin insert mode at the end of the line 
+   * Hit `I` from Normal Mode to begin insert mode at beginning of text in current line
+   * Hit `o` from Normal Mode to create a new line after the current line and begin editing there
+   * Hit `O` from Normal Mode to create a new line before the current line and begin editing there
 * Visual modes - several modes for text selection and manipulation. Most Normal mode commands work here.
 
 ## Navigation
