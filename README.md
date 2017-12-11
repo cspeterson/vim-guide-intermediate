@@ -18,6 +18,7 @@ There is some review of basics, but baseline competence is assumed.
 	- [Modes](#modes)
 	- [Navigation](#navigation)
 	- [Undo and Redo](#undo-and-redo)
+	- [Repeating an edit](#repeating-an-edit)
 	- [Selecting text](#selecting-text)
 		- [Visual mode](#visual-mode)
 		- [Object selection](#object-selection)
