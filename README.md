@@ -54,10 +54,27 @@ To investigate the current state of any setting, query it with a question mark, 
 ```viml
 " line numbers on
 set nu
+
 " avoid old-style odd behaviours. things like word-skip and ctrl+some key combos  are probbaly kinda broken
 set term=xterm-256color 
+
 " always highlight the line being edited
 set cursorline 
+
+" Search with ignore case, smart case, highlight results, incrementally
+" smart case ignores "ignore case" if we include uppercase characters
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+
+" Disable modelines, a feature that lets text files have special vim commands in them, y u c k
+set modelines=0
+
+" Make visually-wrapped lines indent properly, but only if we're on a new enough version of vim
+if has ( "patch-7.4.354" )
+   set breakindent
+endif
 ```
 
 ## Status line
@@ -187,8 +204,15 @@ Vim plugins recommended by me in general:
 ## Modes
 
 * Normal - for navigation through the document and manipulating text. Hit `Escape` or `Ctrl+c` to get back here.
-* Insert - for typing in text. Some commands from Normal mode will also work here. Hit `i` from Normal Mode to get in.
-* Visual modes - several modes for text selection and manipulation. Most Normal mode commands work here.
+* Insert - for typing in text. Some commands from Normal mode will also work here. You can enter insert mode in a 
+handful of different ways from normal mode:
+   * `i` to begin insert mode at current cursor location
+   * `a` to begin insert mode after the current cursor location
+   * `A` to begin insert mode at the end of the line 
+   * `I` to begin insert mode at beginning of text in current line
+   * `o` to create a new line after the current line and begin editing there
+   * `O` to create a new line before the current line and begin editing there
+* Visual modes - There [several modes for text selection](#visual-mode) and manipulation. Most Normal mode commands work here.
 
 ## Navigation
 
@@ -199,6 +223,11 @@ your disposal to for the big jumps.
 
 * `u` undoes an action
 * `ctrl+r` redoes an action
+
+## Repeating an edit
+
+Press `.` to repeat the last edit action you made. This is very useful when combined with object selection and
+replacement commands.
 
 ## Selecting text
 
