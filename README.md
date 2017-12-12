@@ -156,8 +156,17 @@ detectors(`:help ftdetect`) and filetype plugins (`:help ftplugin`) come in.
 ### ftdetect
 
 An ftdetect script goes in `~/.vim/ftdetect/languagename.vim` and contains nothing but code to determine what language a
-file is. Oftentimes, it simply looks at the extension. Vim very likely already knows about your language though, and you
-probably won't need to write one of these.
+file is. Oftentimes, it simply looks at the extension. Vim might already knows about your language though, and you
+mightn't need to write one of these.
+
+But if you did, here is an example of recognition by file extension:
+
+```viml
+au BufRead,BufNewFile *.pp set filetype=puppet
+```
+
+The `filetype` set here will correspond with the name of the corresponding ftplugin, if there is one. In this case, it
+would be `puppet.vim`.
 
 ### ftplugin
 
