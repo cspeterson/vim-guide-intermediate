@@ -68,6 +68,7 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch
+nnoremap <CR> :nohlsearch<cr> " enter clears search highlighting
 
 " Disable modelines, a feature that lets text files have special vim commands in them, y u c k
 set modelines=0
