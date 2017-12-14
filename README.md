@@ -214,6 +214,7 @@ Vim plugins recommended by me in general:
 ## Modes
 
 * Normal - for navigation through the document and manipulating text. Hit `Escape` or `Ctrl+c` to get back here.
+* Command-line - used to input Ex commands, searches, and filters. You hit `:` from Normal Mode to get here.
 * Insert - for typing in text. Some commands from Normal mode will also work here. You can enter insert mode in a 
 handful of different ways from normal mode:
    * `i` to begin insert mode at current cursor location
@@ -234,10 +235,11 @@ your disposal to for the big jumps.
 * `u` undoes an action
 * `ctrl+r` redoes an action
 
-## Repeating an edit
+## Repeating actions
 
-Press `.` to repeat the last edit action you made. This is very useful when combined with object selection and
+* `.` repeats the last edit action from normal mode. This is very useful when combined with object selection and 
 replacement commands.
+* `@:` repeats the last command in command-line mode.
 
 ## Selecting text
 
