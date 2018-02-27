@@ -32,6 +32,7 @@ There is some review of basics, but baseline competence is assumed.
 	- [Tabs](#tabs)
 		- [Tabs settings](#tabs-settings)
 	- [External commands and files](#external-commands-and-files)
+* [Commandline tips and tricks](#commandline-tips-and-tricks)
 * [My vimrc](#my-vimrc)
 
 
@@ -488,8 +489,30 @@ And you can also directly  *read in* external files, as opposed to opening them 
 :read /etc/fstab
 ```
 
----
+# [Commandline tips and tricks]
 
+In addition to fluency *within* Vim itself, it may help to have lots of ways to get	*into* Vim.
+
+``` sh
+# Open two files into diff mode
+vim -d file1 file2
+
+# Open multiple files directly into horizontal splits
+vim -o file1 file2
+
+# Open multiple files directly into vertical  splits
+vim -O file1 file2
+
+# Open multiple files directly into tabs
+vim -p file1 file2
+
+# Open multiple files at once into Vim with horizontal splits, vertical splits, or tabs with find
+find . -name '*somename*' -exec vim -o "{}" +
+find . -name '*somename*' -exec vim -O "{}" +
+find . -name '*somename*' -exec vim -p "{}" +
+```
+
+---
 # My vimrc
 
 If it helps, you can always see a live copy of my own Vim config in [my dotfiles](https://github.com/cspeterson/dotfiles).
