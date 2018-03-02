@@ -482,11 +482,17 @@ You can also use this to pull the *output* of an external command directly into 
 :read !echo $RANDOM
 ```
 
-And you can also directly  *read in* external files, as opposed to opening them in [splits](#splits) or [tabs](#tabs).
+Or this to directly  *read in* external files, as opposed to opening them in [splits](#splits) or [tabs](#tabs).
 
 ```viml
-" This will drop the contents of your fstab starting at the next line after the cursor
+" This will drop in the contents of your fstab starting at the next line after the cursor
 :read /etc/fstab
+```
+
+And this to pipe your file out though an external command and then back again
+```viml
+# Run current buffer through shfmt and then overwrite the current buffer with the result
+%!shfmt
 ```
 
 # [Commandline tips and tricks]
