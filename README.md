@@ -26,6 +26,7 @@ There is some review of basics, but baseline competence is assumed.
 	- [Yanking aka copying](#yanking-aka-copying)
 	- [Motions](#motions)
 	- [Pasting](#pasting)
+	- [Normal mode commands](#normal-mode-commands)
 	- [Indentation](#indentation)
 	- [Splits](#splits)
 		- [Splits settings](#splits-settings)
@@ -40,8 +41,7 @@ There is some review of basics, but baseline competence is assumed.
 
 A walkthrough of the most important areas of configuration.
 
-This walkthrough assumes the availability of a modern build of vim compiled with common features e.g. some of these
-things might not work on your sparse Vim build on RHEL 3.
+This walkthrough assumes the availability of a modern build of vim compiled with common features e.g. some of these things might not work on your sparse Vim build on RHEL 3.
 
 For all of the detail not included here, you can also look at [The Official Vim Docs](http://vimdoc.sourceforge.net/) and [The Vim Wiki](http://vim.wikia.com/wiki/Vim_Tips_Wiki)
 
@@ -82,8 +82,7 @@ endif
 
 ## Status line
 
-You should always be able to tell where you are and what you are doing via the status line. But by default, it offers
-little information.
+You should always be able to tell where you are and what you are doing via the status line. But by default, it offers little information.
 
 The status line is set via the setting `statusline`. Avoid illegibility by using concatenation.
 
@@ -151,15 +150,11 @@ set tabstop=4
 set textwidth=79
 ```
 
-Of course, you are probably using a bunch of different languages with a bunch of different requirements. You can't just
-set these in your vimrc for everything and call it a day without creating new work for yourself. That is where filetype
-detectors(`:help ftdetect`) and filetype plugins (`:help ftplugin`) come in.
+Of course, you are probably using a bunch of different languages with a bunch of different requirements. You can't just set these in your vimrc for everything and call it a day without creating new work for yourself. That is where filetype detectors(`:help ftdetect`) and filetype plugins (`:help ftplugin`) come in.
 
 ### ftdetect
 
-An ftdetect script goes in `~/.vim/ftdetect/languagename.vim` and contains nothing but code to determine what language a
-file is. Oftentimes, it simply looks at the extension. Vim might already knows about your language though, and you
-mightn't need to write one of these.
+An ftdetect script goes in `~/.vim/ftdetect/languagename.vim` and contains nothing but code to determine what language a file is. Oftentimes, it simply looks at the extension. Vim might already knows about your language though, and you mightn't need to write one of these.
 
 But if you did, here is an example of recognition by file extension:
 
@@ -167,13 +162,11 @@ But if you did, here is an example of recognition by file extension:
 au BufRead,BufNewFile *.pp set filetype=puppet
 ```
 
-The `filetype` set here will correspond with the name of the corresponding ftplugin, if there is one. In this case, it
-would be `puppet.vim`.
+The `filetype` set here will correspond with the name of the corresponding ftplugin, if there is one. In this case, it would be `puppet.vim`.
 
 ### ftplugin
 
-An ftplugin script goes in `~/.vim/ftplugin/languagename.vim` and contains all the code and settings that you wish to
-apply to the particular language.
+An ftplugin script goes in `~/.vim/ftplugin/languagename.vim` and contains all the code and settings that you wish to apply to the particular language.
 
 For instance, here is my [PEP 8](https://www.python.org/dev/peps/pep-0008/)-compliant ftplugin for python
 
@@ -191,17 +184,13 @@ set textwidth=79
 
 ## Plugins
 
-So apart from basic configuration some folks have gone to the trouble of writing extensive, powerful plugins to extend
-Vim functionality or to assist in configuration for a particular language or platform.
+So apart from basic configuration some folks have gone to the trouble of writing extensive, powerful plugins to extend Vim functionality or to assist in configuration for a particular language or platform.
 
-The directory structure of a plugin is just a mirror of Vim's own, so you can manually "install" a plugin by copying all
-of the files into the right folders in your `~/.vim`. But that sucks - just use a plugin manager which can manage this
-for you.
+The directory structure of a plugin is just a mirror of Vim's own, so you can manually "install" a plugin by copying all of the files into the right folders in your `~/.vim`. But that sucks - just use a plugin manager which can manage this for you.
 
 [Vundle](https://github.com/VundleVim/Vundle.vim) is a popular plugin manager for Vim. [Pathogen](https://github.com/tpope/vim-pathogen) and [vim-plug](https://github.com/junegunn/vim-plug) are other options that I don't use.
 
-Find useful Vim plugins by searching when you reach a pain point, or just browse around [VimAwesome](https://vimawesome.com/)
-and try out whatever strikes your fancy.
+Find useful Vim plugins by searching when you reach a pain point, or just browse around [VimAwesome](https://vimawesome.com/) and try out whatever strikes your fancy.
 
 Vim plugins recommended by me in general:
 
@@ -229,8 +218,7 @@ handful of different ways from normal mode:
 
 ## Navigation
 
-In normal mode, cursor movement is the same between `h,j,k,l` and the arrow keys. You also have Page Up and Page Down at
-your disposal to for the big jumps.
+In normal mode, cursor movement is the same between `h,j,k,l` and the arrow keys. You also have Page Up and Page Down at your disposal to for the big jumps.
 
 ## Undo and redo
 
@@ -257,8 +245,7 @@ Once the text you need is selected, you may yank or delete or otherwise operate 
 
 ## Object selection
 
-You can use object selections to select text at the object level. That is, word, sentence, paragraph, or block. This is
-a *really* great move to have under your belt for quick editing, code or otherwise.
+You can use object selections to select text at the object level. That is, word, sentence, paragraph, or block. This is a *really* great move to have under your belt for quick editing, code or otherwise.
 
 * `iw` to select in a word
 * `is` to select in a sentence
@@ -306,9 +293,7 @@ You can yank (copy) text a couple of ways in normal mode.
 
 ## Motions
 
-Vim has "motions" for text operations in normal mode. `d` and `y` for delete and yank can be followed by a motion to
-delete or yank or just move the cursor in some distance in some direction. There are lots of motions, and you can dig
-into the full docs by running `:help motions` in normal mode. Here is a selection.
+Vim has "motions" for text operations in normal mode. `d` and `y` for delete and yank can be followed by a motion to delete or yank or just move the cursor in some distance in some direction. There are lots of motions, and you can dig into the full docs by running `:help motions` in normal mode. Here is a selection.
 
 Left, down, up, and right here can all be substituted with h, j, k, and l if you're that sort of person.
 
@@ -356,9 +341,7 @@ With something yanked or deleted, you can pop it back out again somewhere else a
 
 To paste from the system clipboard in Insert Mode, `Ctrl+Shift+V`.
 
-Vim has a bunch of settings re registers and clipboards and whatnot. These are beyond the scope of this document, but if
-you need to paste *code* into Vim there is something to consider: autoindent, if  on, can munge up indented code from
-the system clipboard. You'll want to turn on paste mode:
+Vim has a bunch of settings re registers and clipboards and whatnot. These are beyond the scope of this document, but if you need to paste *code* into Vim there is something to consider: autoindent, if  on, can munge up indented code from the system clipboard. You'll want to turn on paste mode:
 
 ```viml
 " Turn paste mode on
@@ -367,10 +350,19 @@ the system clipboard. You'll want to turn on paste mode:
 :set nopaste
 ```
 
+## Simple changes
+
+Vim actually has a whole set of commands in [normal mode](#modes) just for making "simple changes." Here is a selection, and to learn more check the help `:help simple-change`.
+
+* `~`, `u`, `U` toggle case, make lowercase, and make uppercase, respectively
+* `Ctrl+a` increment the integer either at or next to the cursor.
+	- The default is 1, but you can increment by e.g. 5 by instead typing `5Ctrl+a`. *Note: this may overlap with your GNU Screen escape key, in which case you can type `Ctrl+a+a` to send the correct keystrokes into Vim*
+* `Ctrl+x` decrement an integer, and the size of the decrement can be specified as with increment above
+* `r{char}` quickly replace the character under the cursor without leaving normal mode
+
 ## Indentation
 
-Apart from the indentation *options* above regarding tabs and spaces and how they work, there are controls to shift
-lines and blocks of code around.
+Apart from the indentation *options* above regarding tabs and spaces and how they work, there are controls to shift lines and blocks of code around.
 
 * `<<` shift line or selected text to the left
 * `>>` shift line or selected text to the right
@@ -408,18 +400,15 @@ And within Vim
 :vsp
 ```
 
-To move your focus between your splits, use `Ctrl+W`+`[left,right,up,down]`, or simply `ctrl+w w` repeatedly to jump
-through them in order.
+To move your focus between your splits, use `Ctrl+W`+`[left,right,up,down]`, or simply `ctrl+w w` repeatedly to jump through them in order.
 
-To close all of the buffers *except* for the one you're currently using, use the command `:on[ly]` to keep "only" the
-current buffer.
+To close all of the buffers *except* for the one you're currently using, use the command `:on[ly]` to keep "only" the current buffer.
 
 To move a split window into a tab, `ctrl+w T`
 
 ### Splits settings
 
-By default Vim puts new splits either on top or to the left of the current pane. You can change this behaviour by using
-the follow two settings:
+By default Vim puts new splits either on top or to the left of the current pane. You can change this behaviour by using the follow two settings:
 
 ```viml
 set splitbelow " when splitting layout, new horizontal splits go below the current window
@@ -428,8 +417,7 @@ set splitright " when splitting layout, new vert splits go to the right of the c
 
 ## Tabs
 
-Vim can also use "tabs" which is more or less analagous to the function of a tabbed web browser. This allows sharing of
-registers within the Vim session, like splits, and might be a better organizational mechanism for your use case.
+Vim can also use "tabs" which is more or less analagous to the function of a tabbed web browser. This allows sharing of registers within the Vim session, like splits, and might be a better organizational mechanism for your use case.
 
 To open directly into tabs via the commandline
 
@@ -447,8 +435,7 @@ Within vim:
 :tabedit [file]
 ```
 
-To close all of the tabs *except* for the one you're currently using, use the command `:tabo[nly]` to keep "only" the
-current tab.
+To close all of the tabs *except* for the one you're currently using, use the command `:tabo[nly]` to keep "only" the current tab.
 
 ### Tabs settings
 
