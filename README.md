@@ -220,6 +220,14 @@ handful of different ways from normal mode:
 
 In normal mode, cursor movement is the same between `h,j,k,l` and the arrow keys. You also have Page Up and Page Down at your disposal to for the big jumps.
 
+Note: a lot of the [motions](#motions) that are covered here for altering text also can move the cursor when simply used by themselves in normal mode.
+
+And here are a few handy things:
+
+* `zu` adjusts the view so the current line is at the top of the window
+* `zz` adjusts the view so the current line is at the center of the window
+* `zb` adjusts the view so the current line is at the bottom of the window
+
 ## Undo and redo
 
 * `u` undoes an action
