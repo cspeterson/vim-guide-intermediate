@@ -168,6 +168,11 @@ The `filetype` set here will correspond with the name of the corresponding ftplu
 
 An ftplugin script goes in `~/.vim/ftplugin/languagename.vim` and contains all the code and settings that you wish to apply to the particular language.
 
+```viml
+" In your .vimrc to tell vim to try to look up filetype plugins
+filetype plugin on
+```
+
 For instance, here is my [PEP 8](https://www.python.org/dev/peps/pep-0008/)-compliant ftplugin for python
 
 ```viml
