@@ -357,8 +357,8 @@ With something yanked or deleted, you can pop it back out again somewhere else a
 To paste from the system clipboard in Insert Mode, `Ctrl+Shift+V`.
 
 Vim has a bunch of settings re registers and clipboards and whatnot. These are beyond the scope of this document, but if
-you need to paste *code* into Vim there is something to consider: autoindent, if  on, can munge up indented code from
-the system clipboard. You'll want to turn on paste mode:
+you need to paste code into Vim from the gui clipboard, there is something to consider: autoindent, if  on, can munge up
+indented code from the system clipboard. You'll want to turn on paste mode:
 
 ```viml
 " Turn paste mode on
